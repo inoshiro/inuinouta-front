@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="29.739166mm"
+   height="29.739166mm"
+   viewBox="0 0 29.739166 29.739166"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="user.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.74118967"
+     inkscape:cx="345.39067"
+     inkscape:cy="364.27922"
+     inkscape:window-width="1453"
+     inkscape:window-height="1040"
+     inkscape:window-x="53"
+     inkscape:window-y="200"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g104" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="レイヤー 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-13.558363,-52.235618)">
+    <g
+       id="g104"
+       transform="matrix(0.26458333,0,0,0.26458333,-84.125801,-24.334799)">
+      <circle
+         class="st0"
+         cx="425.39999"
+         cy="345.60001"
+         r="56.200001"
+         id="circle11" />
+      <g
+         id="g17">
+	<path
+   class="st1"
+   d="m 449.3,376.4 v -12.1 c 0,-9.1 -7.5,-16.6 -16.6,-16.6 H 418 c -9.1,0 -16.6,7.5 -16.6,16.6 v 12.1 z"
+   id="path13" />
+
+	<circle
+   class="st1"
+   cx="425.5"
+   cy="327.79999"
+   r="15.1"
+   id="circle15" />
+
+</g>
+    </g>
+  </g>
+  <style
+     type="text/css"
+     id="style9">
+	.st0{fill:#D1D1D2;}
+	.st1{fill:#615F5F;}
+	.st2{fill:#00A0E9;}
+	.st3{fill:#EB6EA5;}
+	.st4{fill:#00A863;}
+	.st5{fill:#F08000;}
+	.st6{fill:#767676;}
+	.st7{fill:none;stroke:#00A0E9;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st8{fill:none;stroke:#EB6EA5;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st9{fill:none;stroke:#00A863;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st10{fill:none;stroke:#F08000;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+</svg>

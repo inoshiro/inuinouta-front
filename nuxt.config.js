@@ -7,9 +7,9 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'inuinouta-front',
+    title: 'いぬいのうた',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ja',
     },
     meta: [
       { charset: 'utf-8' },
@@ -21,7 +21,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [{ src: '~/assets/sass/app.scss', lang: 'scss' }, 'bulma'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -36,7 +36,18 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    'nuxt-webfontloader',
   ],
+
+  webfontloader: {
+    google: {
+      families: [
+        'Zen+Kaku+Gothic+New:wght@500',
+        'Zen+Maru+Gothic:wght@700',
+        'Kosugi+Maru',
+      ],
+    },
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
