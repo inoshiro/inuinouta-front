@@ -1,11 +1,8 @@
 export default {
-  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
-  // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
-  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'いぬいのうた',
     htmlAttrs: {
@@ -18,40 +15,35 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        src: 'https://kit.fontawesome.com/d2bc88bd60.js',
+        crossorigin: 'anonymous',
+      },
+    ],
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [{ src: '~/assets/sass/app.scss', lang: 'scss' }, 'bulma'],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
-    'nuxt-webfontloader',
-  ],
+  modules: ['@nuxtjs/axios', 'nuxt-webfontloader', 'nuxt-fontawesome'],
 
   webfontloader: {
     google: {
       families: [
         'Zen+Kaku+Gothic+New:wght@500',
-        'Zen+Maru+Gothic:wght@700',
+        'Zen+Maru+Gothic:wght@500',
         'Kosugi+Maru',
       ],
     },
   },
 
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: { baseURL: 'http://192.168.33.10:8000' },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }

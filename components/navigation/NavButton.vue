@@ -16,7 +16,11 @@ export default {
   },
   methods: {
     click(event) {
-      event.target.scrollIntoView({ behavior: 'smooth', inline: 'center' })
+      event.target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'end',
+        inline: 'center',
+      })
       this.$emit('click')
     },
   },
@@ -37,7 +41,6 @@ export default {
   padding: 5px 10px;
   margin: 0px 5px;
   font-size: 0.8rem;
-  font-family: 'Zen Maru Gothic', sans-serif;
   font-family: 'Kosugi Maru', sans-serif;
   color: rgb(143, 143, 143);
   background-color: unset;

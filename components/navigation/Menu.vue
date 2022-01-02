@@ -40,6 +40,7 @@ export default {
 
 <style lang="scss">
 .submenu {
+  position: fixed;
   display: flex;
   height: 40px;
   width: 100%;
