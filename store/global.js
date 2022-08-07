@@ -1,5 +1,5 @@
 export const state = () => ({
-  activeNav: 'all',
+  activeNav: 'default',
 })
 
 export const mutations = {

@@ -88,6 +88,10 @@ export default {
   display: flex;
   align-items: center;
 
+  &:hover {
+    background-color: #151515;
+  }
+
   &.-active {
     background-color: #333;
   }

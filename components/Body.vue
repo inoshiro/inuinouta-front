@@ -30,11 +30,11 @@
       <div class="listarea">
         <song-list :playlist="playlist" />
       </div>
-      <div class="control">
-        <span @click="$controller.prev()">前へ</span> /
-        <span @click="playOrPause">再生・停止</span> /
-        <span @click="$controller.next()">次へ</span>
-      </div>
+      <Control
+        @prev="$controller.prev"
+        @play-or-pause="playOrPause"
+        @next="$controller.next"
+      />
     </div>
   </div>
 </template>
@@ -42,12 +42,13 @@
 <script>
 import NavigationMenu from './navigation/Menu.vue'
 import SongList from './SongList.vue'
+import Control from './Control.vue'
 export default {
-  components: { NavigationMenu, SongList },
+  components: { NavigationMenu, SongList, Control },
   data() {
     return {
-      displayVideo: true,
-      displayShowHide: false,
+      displayVideo: false,
+      displayShowHide: true,
       playlist: null,
     }
   },
@@ -74,7 +75,6 @@ export default {
       this.displayVideo = !this.displayVideo
     },
     switchDisplayShowHide() {
-      console.log('aaaa')
       this.displayShowHide = !this.displayShowHide
     },
     playOrPause() {
@@ -132,20 +132,17 @@ export default {
 
 .player-enter,
 .player-leave-to {
-  transform: translateY(-100%);
-  opacity: 0;
+  transform: translateY(-100%) translateY(30px);
 }
-
 .player-enter-active {
   transition: all 0.5s ease;
 }
-
 .player-leave-active {
   transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
 .show-hide {
-  height: 30px;
+  height: 25px;
   background-color: rgb(37, 37, 37);
   padding-bottom: 5px;
   text-align: center;
@@ -155,19 +152,10 @@ export default {
 .yt-container {
   aspect-ratio: 16/9;
   background-color: #000;
+  margin-bottom: -6px;
 
   iframe {
     aspect-ratio: 16/9;
   }
-}
-.control {
-  background-color: #000;
-  position: fixed;
-  width: 100%;
-  max-width: 800px;
-  bottom: 0px;
-  padding: 5px;
-  z-index: 2;
-  text-align: center;
 }
 </style>
