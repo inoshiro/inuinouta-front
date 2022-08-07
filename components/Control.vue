@@ -59,7 +59,7 @@ export default {
 
 <style lang="scss" scoped>
 .control {
-  background-color: rgb(15, 15, 15);
+  background-color: rgb(30, 30, 30);
   position: fixed;
   border-top: 1px solid #999;
   display: flex;
@@ -67,7 +67,7 @@ export default {
   width: 100%;
   max-width: 800px;
   bottom: 0px;
-  padding: 5px 3px;
+  padding: 5px 10px 15px 3px;
   z-index: 2;
 
   .control-left {
@@ -96,8 +96,8 @@ export default {
       align-items: center;
 
       min-width: 100px;
-      padding-left: 10px;
-      padding-right: 10px;
+      padding-left: 5px;
+      padding-right: 5px;
     }
 
     .song_info_inner {

@@ -142,7 +142,7 @@ export default {
 }
 
 .show-hide {
-  height: 25px;
+  height: 30px;
   background-color: rgb(37, 37, 37);
   padding-bottom: 5px;
   text-align: center;

@@ -23,6 +23,6 @@ export default {
 <style lang="scss" scoped>
 .playlist {
   background-color: #000;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
 }
 </style>
