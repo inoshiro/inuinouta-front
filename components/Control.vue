@@ -63,16 +63,16 @@ export default {
   position: fixed;
   border-top: 1px solid #999;
   display: flex;
-  height: 70px;
+  height: 80px;
   width: 100%;
   max-width: 800px;
   bottom: 0px;
-  padding: 5px 10px 15px 3px;
+  padding: 5px 10px 25px 3px;
   z-index: 2;
 
   .control-left {
     flex: 1;
-    min-width: 0px;
+    min-width: 250px;
     display: flex;
 
     .song_thumb {
@@ -127,7 +127,7 @@ export default {
   }
 
   .control-middle {
-    flex-basis: 100px;
+    flex: none;
     display: flex;
     align-items: center;
 
@@ -135,12 +135,12 @@ export default {
       color: #ccc;
       font-size: 1.8em;
       height: 2rem;
-      width: 2.8rem;
+      width: 3rem;
     }
   }
 
   .control-right {
-    flex: 0;
+    flex: auto;
     min-width: 0px;
   }
 }

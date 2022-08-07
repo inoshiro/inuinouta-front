@@ -89,7 +89,7 @@ export default {
   align-items: center;
 
   &:hover {
-    background-color: #151515;
+    background-color: #222;
   }
 
   &.-active {
