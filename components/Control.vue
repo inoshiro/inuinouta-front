@@ -67,12 +67,12 @@ export default {
   width: 100%;
   max-width: 800px;
   bottom: 0px;
-  padding: 5px 10px 25px 3px;
+  padding: 5px 10px 15px 3px;
   z-index: 2;
 
   .control-left {
     flex: 1;
-    min-width: 250px;
+    min-width: 220px;
     display: flex;
 
     .song_thumb {
@@ -88,6 +88,12 @@ export default {
         border: 1px solid #999;
         display: block;
         position: unset;
+      }
+    }
+
+    @media (max-width: 370px) {
+      .song_thumb {
+        display: none;
       }
     }
 
@@ -126,6 +132,12 @@ export default {
     }
   }
 
+  @media (max-width: 370px) {
+    .control-left {
+      min-width: 170px;
+    }
+  }
+
   .control-middle {
     flex: none;
     display: flex;
@@ -141,7 +153,7 @@ export default {
 
   .control-right {
     flex: auto;
-    min-width: 20px;
+    min-width: 0px;
   }
 }
 </style>
