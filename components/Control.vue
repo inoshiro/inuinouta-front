@@ -5,14 +5,23 @@
         <img :src="video.thumbnail_path" />
       </div>
       <div class="song_info">
-        <div class="song_title">{{ song.title }}</div>
-        <div class="song_artist">{{ song.artist }}</div>
+        <div class="song_info_inner">
+          <div class="song_title">{{ song.title }}</div>
+          <div class="song_artist">{{ song.artist }}</div>
+        </div>
       </div>
     </div>
     <div class="control-middle">
-      <span @click="clickPrev"><<</span> /
-      <span @click="clickPlayOrPause">▶</span> /
-      <span @click="clickNext">>></span>
+      <span @click="clickPrev" class="icon">
+        <li class="fa-thin fa-backward-step"></li
+      ></span>
+      <span @click="clickPlayOrPause" class="icon">
+        <li v-if="playing" class="fa-thin fa-pause"></li>
+        <li v-else class="fa-thin fa-play"></li>
+      </span>
+      <span @click="clickNext" class="icon"
+        ><li class="fa-thin fa-forward-step"></li>
+      </span>
     </div>
     <div class="control-right"></div>
   </div>
@@ -30,6 +39,9 @@ export default {
     video() {
       return this.$store.getters['contents/videos'].get(this.song.video)
     },
+    playing() {
+      return this.$store.getters['controller/playing']
+    },
   },
   methods: {
     clickPrev() {
@@ -42,9 +54,6 @@ export default {
       this.$emit('next')
     },
   },
-  mounted() {
-    console.log('@@@ mounted', this.$store.getters['controller/playing'])
-  },
 }
 </script>
 
@@ -54,6 +63,7 @@ export default {
   position: fixed;
   border-top: 1px solid #999;
   display: flex;
+  height: 70px;
   width: 100%;
   max-width: 800px;
   bottom: 0px;
@@ -66,11 +76,15 @@ export default {
     display: flex;
 
     .song_thumb {
+      display: flex;
+      align-items: center;
       width: 70px;
       min-width: 70px;
       padding: 3px 8px;
 
       img {
+        top: auto;
+        bottom: auto;
         border: 1px solid #999;
         display: block;
         position: unset;
@@ -78,13 +92,23 @@ export default {
     }
 
     .song_info {
+      display: flex;
+      align-items: center;
+
       min-width: 100px;
-      padding-left: 3px;
+      padding-left: 10px;
       padding-right: 10px;
     }
 
+    .song_info_inner {
+      flex: auto;
+      width: 100%;
+    }
+
     .song_title {
-      font-size: 0.8rem;
+      width: 100%;
+      text-align: left;
+      font-size: 0.9rem;
       color: #dfdfdf;
       overflow: hidden;
       white-space: nowrap;
@@ -92,7 +116,9 @@ export default {
     }
 
     .song_artist {
-      font-size: 0.7rem;
+      width: 100%;
+      text-align: left;
+      font-size: 0.8rem;
       color: #999;
       overflow: hidden;
       white-space: nowrap;
@@ -102,6 +128,15 @@ export default {
 
   .control-middle {
     flex-basis: 100px;
+    display: flex;
+    align-items: center;
+
+    .icon {
+      color: #ccc;
+      font-size: 1.8em;
+      height: 2rem;
+      width: 2.8rem;
+    }
   }
 
   .control-right {
