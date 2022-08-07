@@ -16,19 +16,19 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/fontawesome": "^1.1.2",
     "bulma": "^0.9.3",
-    "core-js": "^3.15.1",
+    "core-js": "^3.20.2",
     "install": "^0.13.0",
     "node-sass": "^7.0.0",
     "npm": "^8.3.0",
     "nuxt": "^2.15.7",
     "nuxt-webfontloader": "^1.1.0",
-    "sass-loader": "10.1.1",
-    "vue-youtube": "^1.4.0"
+    "vue-youtube": "^1.4.0",
+    "sass-loader": "12.4.0"
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.3.0",
     "nuxt-fontawesome": "^0.4.0",
     "prettier": "^2.3.2",
-    "sass": "^1.45.0"
+    "sass": "^1.45.2"
   }
 }
