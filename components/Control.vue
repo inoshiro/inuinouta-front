@@ -141,7 +141,7 @@ export default {
 
   .control-right {
     flex: auto;
-    min-width: 0px;
+    min-width: 20px;
   }
 }
 </style>
