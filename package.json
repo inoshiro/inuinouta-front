@@ -9,7 +9,10 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/vue-fontawesome": "^2.0.6",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/fontawesome": "^1.1.2",
     "bulma": "^0.9.3",
@@ -19,7 +22,8 @@
     "npm": "^8.3.0",
     "nuxt": "^2.15.7",
     "nuxt-webfontloader": "^1.1.0",
-    "sass-loader": "10.1.1"
+    "sass-loader": "10.1.1",
+    "vue-youtube": "^1.4.0"
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.3.0",

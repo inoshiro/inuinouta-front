@@ -20,6 +20,11 @@ export default {}
   width: 100%;
   background-color: rgb(46, 45, 53);
 
+  max-width: 800px;
+  inset: 0;
+  margin: 0 auto;
+  z-index: 2;
+
   .blank {
     flex: none;
     width: 55px;
