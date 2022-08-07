@@ -47,8 +47,8 @@ export default {
   components: { NavigationMenu, SongList, Control },
   data() {
     return {
-      displayVideo: false,
-      displayShowHide: true,
+      displayVideo: true,
+      displayShowHide: false,
       playlist: null,
     }
   },
