@@ -3,6 +3,8 @@ export const state = () => ({
   pausing: null,
   playing: null,
   playlist_name: null,
+  repeat_mode: 'off',
+  shuffle: false,
 })
 
 export const mutations = {
@@ -18,6 +20,12 @@ export const mutations = {
   setPlaylistName(state, playlist_name) {
     state.playlist_name = playlist_name
   },
+  setRepeatMode(state, repeat_mode) {
+    state.repeat_mode = repeat_mode
+  },
+  setShuffle(state, shuffle) {
+    state.shuffle = shuffle
+  },
 }
 
 export const getters = {
@@ -32,5 +40,11 @@ export const getters = {
   },
   playlist_name: (state) => {
     return state.playlist_name
+  },
+  repeat_mode: (state) => {
+    return state.repeat_mode
+  },
+  shuffle: (state) => {
+    return state.shuffle
   },
 }

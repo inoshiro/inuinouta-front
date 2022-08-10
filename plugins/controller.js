@@ -108,6 +108,11 @@ export default ({ app, store }, inject) => {
       }
       const end_time = await getPlayer().getCurrentTime()
       if (Math.ceil(end_time) == song.end_at) {
+        const repeat_mode = store.getters['controller/repeat_mode']
+        if (repeat_mode == 'once') {
+          app.$controller.play(song, song)
+          return
+        }
         app.$controller.next()
       }
     },

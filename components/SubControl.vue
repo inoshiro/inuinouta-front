@@ -16,13 +16,17 @@
 export default {
   data() {
     return {
-      repeatMode: 'off',
       isRepeat: false,
       repeatOnce: false,
-      isShuffle: false,
     }
   },
   computed: {
+    repeatMode() {
+      return this.$store.getters['controller/repeat_mode']
+    },
+    isShuffle() {
+      return this.$store.getters['controller/shuffle']
+    },
     repeatIconClass() {
       let classes = { '-active': this.isRepeat }
       if (this.repeatOnce) {
@@ -41,19 +45,21 @@ export default {
     },
 
     changeRepeatMode() {
-      switch (this.repeatMode) {
+      const repeatMode = this.$store.getters['controller/repeat_mode']
+      console.log(repeatMode)
+      switch (repeatMode) {
         case 'off':
-          this.repeatMode = 'all'
+          this.$store.commit('controller/setRepeatMode', 'all')
           this.repeatOnce = false
           this.isRepeat = true
           break
         case 'all':
-          this.repeatMode = 'once'
+          this.$store.commit('controller/setRepeatMode', 'once')
           this.repeatOnce = true
           this.isRepeat = true
           break
         case 'once':
-          this.repeatMode = 'off'
+          this.$store.commit('controller/setRepeatMode', 'off')
           this.repeatOnce = false
           this.isRepeat = false
           break
@@ -65,7 +71,7 @@ export default {
     },
 
     clickShuffle() {
-      this.isShuffle = !this.isShuffle
+      this.$store.commit('controller/setShuffle', !this.isShuffle)
     },
   },
 }
