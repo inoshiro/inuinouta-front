@@ -34,6 +34,7 @@
         @prev="$controller.prev"
         @play-or-pause="playOrPause"
         @next="$controller.next"
+        @shuffle="shufflePlaylist"
       />
     </div>
   </div>
@@ -96,6 +97,11 @@ export default {
       const list = this.$store.getters['playlist/' + name]
       console.log(list)
       this.playlist = list
+      this.$store.commit('playlist/setPlaying', list)
+      this.$store.commit('controller/setShuffle', false)
+    },
+    shufflePlaylist() {
+      const list = this.$store.getters['playlist/shuffled']
       this.$store.commit('playlist/setPlaying', list)
     },
   },

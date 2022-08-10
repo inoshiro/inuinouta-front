@@ -2,6 +2,7 @@ export const state = () => ({
   playing: null,
   default: null,
   original: null,
+  shuffled: null,
   video: null,
 })
 
@@ -17,6 +18,9 @@ export const mutations = {
   },
   setVideo(state, playlist) {
     state.video = playlist
+  },
+  setShuffled(state, playlist) {
+    state.shuffled = playlist
   },
   backward(state) {
     state.playing.backwardPosition()
@@ -38,6 +42,9 @@ export const getters = {
   },
   original: (state) => {
     return state.original
+  },
+  shuffled: (state) => {
+    return state.shuffled
   },
   video: (state) => {
     return state.video

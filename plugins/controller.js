@@ -26,6 +26,11 @@ export default ({ app, store }, inject) => {
     },
 
     play: (song_playing, song_requested) => {
+      if (!song_requested) {
+        console.error('next song', song_requested)
+        return
+      }
+
       const video_id = song_playing ? song_playing.video : null
 
       if (video_id !== song_requested.video) {

@@ -72,6 +72,10 @@ export default {
 
     clickShuffle() {
       this.$store.commit('controller/setShuffle', !this.isShuffle)
+      if (this.isShuffle) {
+        this.$playlist.setShuffled()
+        this.$emit('shuffle')
+      }
     },
   },
 }

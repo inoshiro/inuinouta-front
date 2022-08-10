@@ -1,7 +1,10 @@
 <template>
   <div class="control-wrapper">
     <transition name="subcontrol">
-      <SubControl v-show="displaySubControl"></SubControl>
+      <SubControl
+        @shuffle="$listeners['shuffle']"
+        v-show="displaySubControl"
+      ></SubControl>
     </transition>
     <div v-if="song" class="control">
       <div @click="switchSubControl" class="control-left">
