@@ -2,7 +2,8 @@
   <div class="control-wrapper">
     <transition name="subcontrol">
       <SubControl
-        @shuffle="$listeners['shuffle']"
+        @shuffle-on="$listeners['shuffle-on']"
+        @shuffle-off="$listeners['shuffle-off']"
         v-show="displaySubControl"
       ></SubControl>
     </transition>

@@ -34,7 +34,8 @@
         @prev="$controller.prev"
         @play-or-pause="playOrPause"
         @next="$controller.next"
-        @shuffle="shufflePlaylist"
+        @shuffle-on="shufflePlaylist"
+        @shuffle-off="restorePlaylist"
       />
     </div>
   </div>
@@ -100,9 +101,15 @@ export default {
       this.$store.commit('playlist/setPlaying', list)
       this.$store.commit('controller/setShuffle', false)
     },
+    // 現在のプレイリストをシャッフルする
     shufflePlaylist() {
       const list = this.$store.getters['playlist/shuffled']
       this.$store.commit('playlist/setPlaying', list)
+    },
+    // 選択中のプレイリストに復帰する
+    restorePlaylist() {
+      const playlist_name = this.$store.getters['global/activeNav']
+      this.changePlaylist(playlist_name)
     },
   },
   mounted() {

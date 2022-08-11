@@ -104,10 +104,6 @@ class Playlist {
   }
 
   forwardPosition() {
-    console.log('forward')
-    console.log(this.position)
-    console.log(this.max_index)
-    console.log(this.list)
     if (this.position === this.max_index) {
       this.position = 0
     } else {

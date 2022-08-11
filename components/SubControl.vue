@@ -74,7 +74,9 @@ export default {
       this.$store.commit('controller/setShuffle', !this.isShuffle)
       if (this.isShuffle) {
         this.$playlist.setShuffled()
-        this.$emit('shuffle')
+        this.$emit('shuffle-on')
+      } else {
+        this.$emit('shuffle-off')
       }
     },
   },
