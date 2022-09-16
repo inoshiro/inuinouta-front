@@ -94,6 +94,11 @@ class Playlist {
     this.position = pos
   }
 
+  setPositionById(id) {
+    const pos = this.list.findIndex((val) => val == id)
+    this.position = pos
+  }
+
   backwardPosition() {
     if (this.position === 0) {
       this.position = this.max_index

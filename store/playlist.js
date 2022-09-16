@@ -31,6 +31,9 @@ export const mutations = {
   setPosition(state, position) {
     state.playing.setPosition(position)
   },
+  setPositionById(state, id) {
+    state.playing.setPositionById(id)
+  },
 }
 
 export const getters = {

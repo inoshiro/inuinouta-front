@@ -120,6 +120,12 @@ export default {
     restorePlaylist() {
       const playlist_name = this.$store.getters['global/activeNav']
       this.changePlaylist(playlist_name)
+
+      // 再生中の曲とプレイリストのポジションを同期する
+      const playing = this.$store.getters['controller/playing']
+      if (playing) {
+        this.$store.commit('playlist/setPositionById', playing.id)
+      }
     },
   },
   mounted() {
