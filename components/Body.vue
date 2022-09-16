@@ -18,12 +18,21 @@
                 ref="youtube"
               />
             </div>
-            <div class="show-hide" @click="showHideVideo">
+            <div
+              id="show-hide-bar-open"
+              class="show-hide"
+              @click="showHideVideo"
+            >
               <span>{{ showHideMark }}</span>
             </div>
           </div>
         </transition>
-        <div class="show-hide" v-if="displayShowHide" @click="showHideVideo">
+        <div
+          id="show-hide-bar-close"
+          class="show-hide"
+          v-if="displayShowHide"
+          @click="showHideVideo"
+        >
           <span>{{ showHideMark }}</span>
         </div>
       </div>
@@ -75,6 +84,7 @@ export default {
   methods: {
     showHideVideo() {
       this.displayVideo = !this.displayVideo
+      this.$store.commit('global/switchVideoArea')
     },
     switchDisplayShowHide() {
       this.displayShowHide = !this.displayShowHide

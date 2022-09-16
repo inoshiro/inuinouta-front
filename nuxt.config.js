@@ -29,6 +29,7 @@ export default {
   plugins: [
     '~/plugins/vue-youtube.js',
     '~/plugins/datas.js',
+    '~/plugins/utils.js',
     '~/plugins/playlist.js',
     '~/plugins/controller.js',
     '~/plugins/font-awesome.js',

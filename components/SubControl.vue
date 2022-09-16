@@ -9,6 +9,9 @@
         :class="isShuffle ? '-active' : ''"
       ></li>
     </span>
+    <span @click="clickScroll" class="icon"
+      ><li class="fa-regular fa-arrows-to-dot -active"></li>
+    </span>
   </div>
 </template>
 
@@ -78,6 +81,10 @@ export default {
       } else {
         this.$emit('shuffle-off')
       }
+    },
+
+    clickScroll() {
+      this.$utils.scrollToPlayingSong()
     },
   },
 }

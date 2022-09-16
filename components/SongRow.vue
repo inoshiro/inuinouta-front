@@ -3,7 +3,7 @@
     <div
       class="song-outer"
       :class="isSelected ? '-active' : ''"
-      :id="'song-row-' + position"
+      :id="'song-row-' + song.id"
     >
       <div @click="clickSong" class="song_thumb">
         <img :src="video.thumbnail_path" />

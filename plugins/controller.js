@@ -81,6 +81,7 @@ export default ({ app, store }, inject) => {
       const song_prev = store.getters['contents/songs'].get(song_id_prev)
 
       app.$controller.play(song_playing, song_prev)
+      app.$utils.scrollToPlayingSong()
     },
 
     next: () => {
@@ -104,6 +105,7 @@ export default ({ app, store }, inject) => {
       const song_next = store.getters['contents/songs'].get(song_id_next)
 
       app.$controller.play(song_playing, song_next)
+      app.$utils.scrollToPlayingSong()
     },
 
     autoJump: async () => {
