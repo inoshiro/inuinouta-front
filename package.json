@@ -23,7 +23,7 @@
     "nuxt": "^2.15.7",
     "nuxt-webfontloader": "^1.1.0",
     "vue-youtube": "^1.4.0",
-    "sass-loader": "13.0.2"
+    "sass-loader": "13.1.0"
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.3.0",
