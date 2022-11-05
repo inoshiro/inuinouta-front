@@ -9,6 +9,7 @@ export default ({ app, store }, inject) => {
         getPlayer().pauseVideo()
         store.commit('controller/setPlaying', null)
         store.commit('controller/setPausing', song)
+        store.commit('controller/setStateChanged', true)
         return
       }
 
@@ -17,6 +18,7 @@ export default ({ app, store }, inject) => {
         getPlayer().playVideo()
         store.commit('controller/setPlaying', song)
         store.commit('controller/setPausing', null)
+        store.commit('controller/setStateChanged', true)
         return
       }
 
@@ -41,6 +43,7 @@ export default ({ app, store }, inject) => {
       }
       store.commit('controller/setPlaying', song_requested)
       store.commit('controller/setPausing', null)
+      store.commit('controller/setStateChanged', true)
 
       // スクロール
       // const position = app.$controller.getPosition()

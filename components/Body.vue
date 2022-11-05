@@ -15,6 +15,8 @@
                 :width="playerSize.width"
                 :height="playerSize.height"
                 :video-id="$init_video.id"
+                @playing="syncPlaying"
+                @paused="syncPaused"
                 ref="youtube"
               />
             </div>
@@ -106,7 +108,6 @@ export default {
     },
     changePlaylist(name) {
       const list = this.$store.getters['playlist/' + name]
-      console.log(list)
       this.playlist = list
       this.$store.commit('playlist/setPlaying', list)
       this.$store.commit('controller/setShuffle', false)
@@ -127,10 +128,47 @@ export default {
         this.$store.commit('playlist/setPositionById', playing.id)
       }
     },
+    // プレイヤーが再生を開始した時
+    syncPlaying() {
+      const state_changed = this.$store.getters['controller/state_changed']
+      if (state_changed) {
+        console.error('state change is true')
+        this.$store.commit('controller/setStateChanged', false)
+        return
+      }
+      const pausing = this.$store.getters['controller/pausing']
+      if (!pausing) {
+        return
+      }
+      const song = this.$store.getters['contents/songs'].get(pausing.id)
+      this.$store.commit('controller/setPlaying', song)
+      this.$store.commit('controller/setPausing', null)
+    },
+    // プレイヤーが停止した時
+    syncPaused() {
+      const state_changed = this.$store.getters['controller/state_changed']
+      if (state_changed) {
+        this.$store.commit('controller/setStateChanged', false)
+        return
+      }
+      const playing = this.$store.getters['controller/playing']
+      if (!playing) {
+        return
+      }
+      const song = this.$store.getters['contents/songs'].get(playing.id)
+      this.$store.commit('controller/setPlaying', null)
+      this.$store.commit('controller/setPausing', song)
+    },
   },
   mounted() {
     this.$store.commit('controller/setPlayer', this.$refs.youtube.player)
+
+    // デフォルトプレイリストの先頭の曲を停止中に設定
     this.playlist = this.$store.getters['playlist/default']
+    const initial_song_id = this.playlist.list[0]
+    const initial_song =
+      this.$store.getters['contents/songs'].get(initial_song_id)
+    this.$store.commit('controller/setPausing', initial_song)
 
     this.$nuxt.$on('click-song', (song, pos) => {
       this.$controller.play_or_pause(song, pos)
