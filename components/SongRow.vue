@@ -17,8 +17,10 @@
         </div>
       </div>
       <div @click="clickSong" class="song_info">
-        <div class="song_title">{{ song.title }}</div>
-        <div class="song_artist">{{ song.artist }}</div>
+        <a :href="youtubeUrl" @click.prevent>
+          <div class="song_title">{{ song.title }}</div>
+          <div class="song_artist">{{ song.artist }}</div>
+        </a>
       </div>
       <div class="song_add">
         <span @click="clickAdd" class="icon">
@@ -64,6 +66,14 @@ export default {
     video() {
       return this.$store.getters['contents/videos'].get(this.song.video)
     },
+    youtubeUrl() {
+      const base = 'https://youtube.com/watch?'
+      const params = new URLSearchParams()
+      params.append('v', this.song.video)
+      params.append('t', this.song.start_at)
+
+      return base + params.toString()
+    },
   },
   methods: {
     clickSong() {
@@ -87,6 +97,7 @@ export default {
   height: 50px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   &:hover {
     background-color: #222;
@@ -134,6 +145,10 @@ export default {
   .song_info {
     padding-left: 5px;
     width: calc(100% - 150px);
+
+    a {
+      display: block;
+    }
   }
 
   .song_title {

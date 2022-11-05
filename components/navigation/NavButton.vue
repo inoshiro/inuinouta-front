@@ -1,5 +1,7 @@
 <template>
-  <button @click="click($event)" :class="className">{{ label }}</button>
+  <button @click="click($event)" class="nav-button" :class="classActive">
+    {{ label }}
+  </button>
 </template>
 
 <script>
@@ -25,12 +27,10 @@ export default {
     },
   },
   computed: {
-    className() {
-      const class_name = 'nav-button'
+    classActive() {
       if (this.name === this.$store.getters['global/activeNav']) {
-        return class_name + '-active'
+        return '-active'
       }
-      return class_name
     },
   },
 }
@@ -47,16 +47,11 @@ export default {
   border: none;
   border-bottom: 5px solid #000;
   transition: 0.8s;
+  cursor: pointer;
 }
 
-.nav-button-active {
-  padding: 5px 10px;
-  margin: 0px 5px;
-  font-size: 0.8rem;
-  font-family: 'Kosugi Maru', sans-serif;
+.-active {
   color: rgb(223, 223, 223);
-  background-color: unset;
-  border: none;
   border-bottom: 5px solid #9d3757;
   transition: 0.8s;
 }
