@@ -2,7 +2,9 @@
   <div class="header">
     <div class="blank"></div>
     <div class="site-title"><h1>いぬいのうた</h1></div>
-    <div class="account"><img src="/img/default_user.svg" /></div>
+    <div class="account">
+      <img :src="$s3_image('/icons/default_user.svg')" />
+    </div>
   </div>
 </template>
 
