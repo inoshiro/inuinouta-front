@@ -86,7 +86,7 @@ export default {
   position: fixed;
   bottom: 0px;
   width: 100%;
-  max-width: 800px;
+  max-width: 600px;
   z-index: 2;
 }
 .control {

@@ -22,7 +22,7 @@ export default {}
   width: 100%;
   background-color: rgb(46, 45, 53);
 
-  max-width: 800px;
+  max-width: 600px;
   inset: 0;
   margin: 0 auto;
   z-index: 2;
@@ -36,7 +36,7 @@ export default {}
   .site-title h1 {
     flex: auto;
     margin: 0;
-    padding: 5px;
+    padding: 4px;
     color: rgb(223, 223, 223);
     font-family: 'Zen Kaku Gothic New', sans-serif;
     font-size: 1.5rem;

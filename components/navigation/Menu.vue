@@ -46,7 +46,7 @@ export default {
   display: flex;
   height: 40px;
   width: 100%;
-  max-width: 800px;
+  max-width: 600px;
   inset: 0;
   margin: 45px auto;
   padding: 5px;

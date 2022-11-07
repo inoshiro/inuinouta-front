@@ -132,7 +132,6 @@ export default {
     syncPlaying() {
       const state_changed = this.$store.getters['controller/state_changed']
       if (state_changed) {
-        console.error('state change is true')
         this.$store.commit('controller/setStateChanged', false)
         return
       }
@@ -182,7 +181,7 @@ export default {
 <style lang="scss" scoped>
 .body {
   padding-top: 45px;
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
 }
 .contents {
