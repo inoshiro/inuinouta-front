@@ -46,7 +46,7 @@ export default {
 }
 
 .modal-box {
-  width: 600px;
+  max-width: 600px;
   height: 100%;
   margin: auto;
   position:relative
@@ -56,7 +56,7 @@ export default {
   position: absolute;
   bottom: 100px;
   right: 20px;
-  width: 300px;
+  width: auto;
   height: auto;
   background-color: rgba(0, 0, 0, 0.9);
   border: 2px solid #ccc;

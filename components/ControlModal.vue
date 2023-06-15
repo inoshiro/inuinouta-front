@@ -106,8 +106,8 @@ export default {
 .control-line {
   display: flex;
   align-items: center;
-  height: 50px;
-  font-size: 1em;
+  height: 40px;
+  font-size: 0.8em;
   color: #ddd;
   cursor: pointer;
   &:last-child {
