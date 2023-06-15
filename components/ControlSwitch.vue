@@ -33,7 +33,7 @@ export default {
 .switch-area {
   position: relative;
   height: 100%;
-  width: 600px;
+  max-width: 600px;
   margin: auto;
 }
 
