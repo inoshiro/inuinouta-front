@@ -107,7 +107,7 @@ export default {
   display: flex;
   align-items: center;
   height: 40px;
-  font-size: 0.8em;
+  font-size: 0.9em;
   color: #ddd;
   cursor: pointer;
   &:last-child {
