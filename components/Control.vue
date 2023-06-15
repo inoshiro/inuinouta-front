@@ -1,19 +1,7 @@
 <template>
   <div class="control-wrapper">
-    <transition name="subcontrol">
-      <SubControl
-        @shuffle-on="$listeners['shuffle-on']"
-        @shuffle-off="$listeners['shuffle-off']"
-        v-show="displaySubControl"
-      ></SubControl>
-    </transition>
     <div v-if="song" class="control">
-      <div @click="switchSubControl" class="control-left">
-        <div class="please-tap-here">
-          <span @click="clickNext" class="icon"
-            ><li class="fa-solid fa-chevron-up"></li>
-          </span>
-        </div>
+      <div class="control-left">
         <div class="song_thumb">
           <img :src="video.thumbnail_path" />
         </div>
@@ -45,11 +33,6 @@
 import SubControl from './SubControl.vue'
 export default {
   components: { SubControl },
-  data() {
-    return {
-      displaySubControl: false,
-    }
-  },
   computed: {
     song() {
       return (
@@ -73,9 +56,6 @@ export default {
     },
     clickNext() {
       this.$emit('next')
-    },
-    switchSubControl() {
-      this.displaySubControl = !this.displaySubControl
     },
   },
 }

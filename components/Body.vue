@@ -2,6 +2,7 @@
   <div class="body">
     <navigation-menu @click-nav="changePlaylist" />
     <div class="contents">
+      <control-switch @click-setting="switchControlModal"></control-switch>
       <div class="playarea">
         <transition
           name="player"
@@ -49,6 +50,12 @@
         @shuffle-off="restorePlaylist"
       />
     </div>
+    <control-modal
+      v-show="displayControlModal"
+      @close="switchControlModal"
+      @shuffle-on="shufflePlaylist"
+      @shuffle-off="restorePlaylist"
+    ></control-modal>
   </div>
 </template>
 
@@ -56,12 +63,14 @@
 import NavigationMenu from './navigation/Menu.vue'
 import SongList from './SongList.vue'
 import Control from './Control.vue'
+import ControlModal from './ControlModal.vue'
 export default {
   components: { NavigationMenu, SongList, Control },
   data() {
     return {
       displayVideo: true,
       displayShowHide: false,
+      displayControlModal: false,
       playlist: null,
     }
   },
@@ -84,6 +93,10 @@ export default {
     },
   },
   methods: {
+    switchControlModal() {
+      console.error('switchControlModal')
+      this.displayControlModal = !this.displayControlModal
+    },
     showHideVideo() {
       this.displayVideo = !this.displayVideo
       this.$store.commit('global/switchVideoArea')
@@ -183,6 +196,7 @@ export default {
   padding-top: 45px;
   max-width: 600px;
   margin: 0 auto;
+  position: relative;
 }
 .contents {
   margin-top: 40px;
