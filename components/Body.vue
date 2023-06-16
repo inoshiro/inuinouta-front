@@ -2,7 +2,7 @@
   <div class="body">
     <navigation-menu @click-nav="changePlaylist" />
     <div class="contents">
-      <control-switch @click-setting="switchControlModal"></control-switch>
+      <control-switch @click-setting="switchControlModal" @search="filter"></control-switch>
       <div class="playarea">
         <transition
           name="player"
@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class="listarea">
-        <song-list :playlist="playlist" />
+        <song-list :playlist="filteredList" />
       </div>
       <Control
         @prev="$controller.prev"
@@ -72,6 +72,7 @@ export default {
       displayShowHide: false,
       displayControlModal: false,
       playlist: null,
+      keyword: ''
     }
   },
   computed: {
@@ -91,8 +92,29 @@ export default {
     showHideMark() {
       return this.displayVideo ? '▲' : '▼'
     },
+    filteredList() {
+      const keyword = this.keyword
+      const filteredList = { ...this.playlist}
+      if (!keyword) {
+        return this.playlist
+      }
+      const songs = this.$store.getters['contents/songs']
+      const filtered = []
+      for (const song_id of this.playlist.list) {
+        const song = songs.get(song_id)
+        if (song.title.includes(keyword) || song.artist.includes(keyword)) {
+          filtered.push(song_id)
+        }
+      }
+      filteredList.list = filtered
+      return filteredList
+    },
   },
   methods: {
+    filter(keyword) {
+      console.log('filter', keyword)
+      this.keyword = keyword
+    },
     switchControlModal() {
       console.error('switchControlModal')
       this.displayControlModal = !this.displayControlModal
