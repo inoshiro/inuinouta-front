@@ -15,7 +15,7 @@
       </div>
       <transition name="fade">
         <div class="search-box" v-show="displaySearchBox">
-          <input v-model="keyword" type="text" placeholder="曲名・アーティスト名" />
+          <input v-model="keyword" type="text" placeholder="曲名・アーティスト名" ref="keyword" enterkeyhint="done" v-on:keydown.enter="onEnter" />
         </div>
       </transition>
     </div>
@@ -32,12 +32,16 @@ export default {
   },
   methods: {
     clickSetting() {
-      console.error('clickSetting')
       this.$emit('click-setting')
     },
-    switchSearchBox() {
+    async switchSearchBox() {
       this.displaySearchBox = !this.displaySearchBox
+      await this.$nextTick()
+      this.$refs.keyword.focus()
     },
+    onEnter() {
+      this.$refs.keyword.blur()
+    }
   },
   watch: {
     keyword() {
