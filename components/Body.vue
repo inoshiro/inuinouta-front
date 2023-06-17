@@ -93,7 +93,7 @@ export default {
       return this.displayVideo ? '▲' : '▼'
     },
     filteredList() {
-      const keyword = this.keyword
+      const keyword = this.keyword.toLowerCase()
       const filteredList = { ...this.playlist}
       if (!keyword) {
         return this.playlist
@@ -102,7 +102,7 @@ export default {
       const filtered = []
       for (const song_id of this.playlist.list) {
         const song = songs.get(song_id)
-        if (song.title.includes(keyword) || song.artist.includes(keyword)) {
+        if (song.title.toLowerCase().includes(keyword) || song.artist.toLowerCase().includes(keyword)) {
           filtered.push(song_id)
         }
       }
