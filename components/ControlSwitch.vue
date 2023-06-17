@@ -37,7 +37,11 @@ export default {
     async switchSearchBox() {
       this.displaySearchBox = !this.displaySearchBox
       await this.$nextTick()
-      this.$refs.keyword.focus()
+      if (this.displaySearchBox) {
+        this.$refs.keyword.focus()
+      } else {
+        this.$refs.keyword.blur()
+      }
     },
     onEnter() {
       this.$refs.keyword.blur()
